@@ -1,0 +1,30 @@
+/**
+ * For more details on how to configure Wrangler, refer to:
+ * https://developers.cloudflare.com/workers/wrangler/configuration/
+ */
+{
+    "$schema": "node_modules/wrangler/config-schema.json",
+    "name": "navihive",
+    "main": "worker/index.ts",
+    "compatibility_date": "2025-04-05",
+    "assets": {
+        "not_found_handling": "single-page-application"
+    },
+    "observability": {
+        "enabled": true
+    },
+    // D1数据库绑定
+    "d1_databases": [
+        {
+            "binding": "DB",
+            "database_name": "navigation-db",
+            "database_id": "32f3c929-2106-4ea1-bf3c-ebe9588cf1aa"
+        }
+    ],
+    "vars": {
+        "AUTH_ENABLED": "true",
+        "AUTH_USERNAME": "tai",
+        "AUTH_PASSWORD": "1314520tai@",
+        "AUTH_SECRET": "1314520tai@"
+    }
+}
